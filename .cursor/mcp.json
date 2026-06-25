@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Users/cola/Library/Application Support/Herd/bin/php",
+            "args": [
+                "/Users/cola/Herd/osmo/artisan",
+                "boost:mcp"
+            ],
+            "env": {
+                "PATH": "/Users/cola/Library/Application Support/Herd/bin:/usr/bin:/bin"
+            }
+        }
+    }
+}
