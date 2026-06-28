@@ -19,7 +19,7 @@ export function TutorialCategoryFilter({ category }: Props) {
                 ...(q ? { q } : {}),
             },
             {
-                preserveScroll: false,
+                preserveScroll: true,
                 preserveState: true,
                 replace: true,
                 only: ['tutorials', 'filters'],
