@@ -164,12 +164,21 @@ export default function CommunityShow({ post }: CommunityShowPageProps) {
                                 <button
                                     type="button"
                                     onClick={() => {
-                                        document
-                                            .getElementById('community-answer-form')
-                                            ?.scrollIntoView({
+                                        const form =
+                                            document.getElementById(
+                                                'community-answer-form',
+                                            );
+
+                                        if (!form) {
+                                            return;
+                                        }
+
+                                        if (window.innerWidth < 640) {
+                                            form.scrollIntoView({
                                                 behavior: 'smooth',
-                                                block: 'center',
+                                                block: 'nearest',
                                             });
+                                        }
                                     }}
                                     className="inline-flex items-center justify-center rounded-xl border border-red-500/30 bg-background px-3 py-2 text-xs font-semibold text-red-500 transition-colors hover:bg-red-950/15"
                                 >
