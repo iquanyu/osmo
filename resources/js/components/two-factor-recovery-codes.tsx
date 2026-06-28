@@ -36,10 +36,12 @@ export default function TwoFactorRecoveryCodes({
 
         if (!codesAreVisible) {
             setTimeout(() => {
-                codesSectionRef.current?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',
-                });
+                if (window.innerWidth < 640) {
+                    codesSectionRef.current?.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                    });
+                }
             });
         }
     }, [codesAreVisible, recoveryCodesList.length, fetchRecoveryCodes]);

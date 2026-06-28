@@ -73,7 +73,7 @@ export function MainLayoutSearch({
                         : {}),
                 },
                 {
-                    preserveScroll: false,
+                    preserveScroll: true,
                     preserveState: true,
                     replace: true,
                     onSuccess: () => setDraftSearch(null),
