@@ -173,7 +173,15 @@ export default function CommunityShow({ post }: CommunityShowPageProps) {
                                             return;
                                         }
 
-                                        if (window.innerWidth < 640) {
+                                        const rect =
+                                            form.getBoundingClientRect();
+
+                                        if (
+                                            window.innerWidth < 640 &&
+                                            (rect.top < 0 ||
+                                                rect.bottom >
+                                                    window.innerHeight)
+                                        ) {
                                             form.scrollIntoView({
                                                 behavior: 'smooth',
                                                 block: 'nearest',

@@ -36,7 +36,13 @@ export default function TwoFactorRecoveryCodes({
 
         if (!codesAreVisible) {
             setTimeout(() => {
-                if (window.innerWidth < 640) {
+                const rect = codesSectionRef.current?.getBoundingClientRect();
+
+                if (
+                    window.innerWidth < 640 &&
+                    rect &&
+                    (rect.top < 0 || rect.bottom > window.innerHeight)
+                ) {
                     codesSectionRef.current?.scrollIntoView({
                         behavior: 'smooth',
                         block: 'nearest',
